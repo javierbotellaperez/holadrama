@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body, html {
   width: 100%;
   height: 100%;
@@ -12,16 +16,14 @@ body, html {
   overflow-x: hidden;
 }
 
-/* NAVEGACIÓN EN ESQUINA */
+/* NAVEGACIÓN EN ESQUINAS */
 .corner-nav {
   position: fixed;
-  top: 2rem;
-  left: 2.5rem;
   z-index: 100;
   font-size: 1rem;
   font-weight: 900;
   text-transform: uppercase;
-  color: #ff0000; /* Rojo puro DRAMA */
+  color: #ff0000;
   text-decoration: none;
   letter-spacing: 1.5px;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -32,6 +34,9 @@ body, html {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
+.top-left { top: 2rem; left: 2.5rem; }
+.top-right { top: 2rem; right: 2.5rem; }
 
 /* VÍDEOS FULLSCREEN */
 .videos-wrapper {
@@ -55,7 +60,57 @@ body, html {
 .video-container video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Hace que llene la pantalla completa */
+  object-fit: cover;
+}
+
+/* FLECHAS DE NAVEGACIÓN Y SCROLL */
+.scroll-arrow {
+  position: absolute;
+  z-index: 10;
+  color: #ff0000;
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  background: rgba(0,0,0,0.4);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background 0.2s ease;
+  user-select: none;
+}
+
+.scroll-arrow:hover {
+  transform: scale(1.2);
+  background: rgba(0,0,0,0.8);
+}
+
+.bottom-arrow {
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.top-arrow {
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounceUp 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, 10px); }
+  60% { transform: translate(-50%, 5px); }
+}
+
+@keyframes bounceUp {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -10px); }
+  60% { transform: translate(-50%, -5px); }
 }
 
 /* BOTÓN DE CRÉDITOS */
@@ -66,7 +121,7 @@ body, html {
   z-index: 10;
   background: rgba(0, 0, 0, 0.6);
   border: 1.5px solid #ff0000;
-  color: #ff53a5; /* Rosa del fondo DRAMA */
+  color: #ff53a5;
   padding: 0.6rem 1.2rem;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 900;
@@ -84,14 +139,16 @@ body, html {
   color: #ffffff;
 }
 
-/* DESPLEGABLE / MODAL DE CRÉDITOS */
+/* DESPLEGABLE DE CRÉDITOS (15% MENOS OPACIDAD = 85% OPACIDAD + BLUR) */
 .credits-modal {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.94); /* Fondo negro absoluto */
+  background-color: rgba(0, 0, 0, 0.85); /* Traslúcido para ver el vídeo al fondo */
+  backdrop-filter: blur(10px); /* Desenfoque cinemático */
+  -webkit-backdrop-filter: blur(10px);
   z-index: 50;
   display: flex;
   flex-direction: column;
@@ -114,7 +171,7 @@ body, html {
   right: 2.5rem;
   background: transparent;
   border: none;
-  color: #ff0000; /* Rojo DRAMA */
+  color: #ff0000;
   font-weight: 900;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -133,7 +190,6 @@ body, html {
   overflow-y: auto;
   padding-right: 1rem;
   text-align: center;
-  /* Scrollbar personalizado sobrio */
   scrollbar-width: thin;
   scrollbar-color: #ff0000 transparent;
 }
@@ -173,7 +229,9 @@ body, html {
 
 /* RESPONSIVE MÓVIL */
 @media (max-width: 768px) {
-  .corner-nav { top: 1rem; left: 1rem; }
+  .corner-nav { top: 1rem; }
+  .top-left { left: 1rem; }
+  .top-right { right: 1rem; }
   .credits-btn { bottom: 1.5rem; right: 1.5rem; font-size: 0.8rem; }
   .close-btn { top: 1rem; right: 1rem; }
   .role { font-size: 0.95rem; }
