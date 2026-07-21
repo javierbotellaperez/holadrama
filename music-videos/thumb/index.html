@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRAMA — Music Videos Gallery</title>
+  <title>DRAMA</title>
   <link rel="icon" type="image/png" href="../../logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,20 +14,21 @@
 </head>
 <body>
 
-  <!-- NAVEGACIÓN ESQUINAS -->
-  <a href="../../" class="corner-nav top-left">HOME</a>
-  <a href="../" class="corner-nav top-right">FULLSCREEN</a>
+  <!-- NAVEGACIÓN PRINCIPAL DE 4 ESQUINAS -->
+  <a href="../" class="corner-nav top-left">HOME</a>
+  <a href="../../events/" class="corner-nav top-right">EVENTS</a>
+  <a href="../../about/" class="corner-nav bottom-left">ABOUT</a>
+  <a href="../../contact/" class="corner-nav bottom-right">CONTACT</a>
 
   <!-- REJILLA DE MINIATURAS (GALLERY) -->
   <main class="gallery-container">
-    <h1 class="gallery-title">MUSIC VIDEOS</h1>
+    <h1 class="gallery-title"></h1>
 
     <div class="gallery-grid">
       
       <!-- ITEM 1 -->
       <a href="../#mv1" class="thumb-card">
         <div class="thumb-wrapper">
-          <!-- Si tienes imagen fija de portada ponla en src, o deja el video que genera la miniatura automática -->
           <video preload="metadata" muted onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
             <source src="../videos/mv_000001.mp4#t=0.5" type="video/mp4">
           </video>
@@ -36,8 +37,14 @@
           </div>
         </div>
         <div class="thumb-info">
-          <span class="artist">SEVDALIZA</span>
-          <span class="title">mv_000001</span>
+          <div class="main-details">
+            <span class="song-title">MESSIAH</span>
+            <span class="artist">SEVDALIZA</span>
+          </div>
+          <div class="director-detail">
+            <span class="director-label">DIR.</span>
+            <span class="director-name">TANU MUIÑO</span>
+          </div>
         </div>
       </a>
 
@@ -52,12 +59,16 @@
           </div>
         </div>
         <div class="thumb-info">
-          <span class="artist">SEVDALIZA x LA JOAQUI</span>
-          <span class="title">mv_000002</span>
+          <div class="main-details">
+            <span class="song-title">HEROINA</span>
+            <span class="artist">SEVDALIZA</span>
+          </div>
+          <div class="director-detail">
+            <span class="director-label">DIR.</span>
+            <span class="director-name">TANU MUIÑO</span>
+          </div>
         </div>
       </a>
-
-      <!-- Si en el futuro añades más vídeos, solo duplicas este bloque <a class="thumb-card"> -->
 
     </div>
   </main>
