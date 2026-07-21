@@ -101,6 +101,27 @@ body {
   animation-play-state: paused;
 }
 
+#ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: tickerLoop 25s linear infinite;
+}
+
+/* Pausa el movimiento al pasar el ratón para facilitar el clic */
+#ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tickerLoop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%); /* Se desplaza la mitad exacta para empalmar suavemente */
+  }
+}
+
 @keyframes scrollVertical {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
