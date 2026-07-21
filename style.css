@@ -9,7 +9,7 @@ body, html {
   height: 100%;
   font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
   font-weight: 900;
-  background-color: #ff53a5; /* Rosa corporativo exacto */
+  background-color: #ff53a5; /* Rosa corporativo DRAMA */
   overflow: hidden;
 }
 
@@ -21,7 +21,7 @@ body, html {
   font-weight: 900;
   text-transform: uppercase;
   color: #ff002b; /* Rojo del logo */
-  cursor: pointer;
+  text-decoration: none;
   letter-spacing: 1.5px;
   transition: transform 0.2s ease, opacity 0.2s ease;
   user-select: none;
@@ -86,7 +86,7 @@ body, html {
   letter-spacing: 2px;
 }
 
-/* LOGO DERECHO (REDUCIDO DE TAMAÑO) */
+/* LOGO DERECHO */
 .right-section {
   flex: 1;
   display: flex;
@@ -96,7 +96,7 @@ body, html {
 }
 
 .logo-wrapper {
-  max-width: 50%; /* Logo más pequeño y refinado */
+  max-width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,87 +106,6 @@ body, html {
   max-width: 100%;
   max-height: 50vh;
   object-fit: contain;
-}
-
-
-/* VENTANAS MODALES / SUBCARPETAS */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  z-index: 200;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-overlay.active {
-  display: flex;
-}
-
-.modal-content {
-  background-color: #ff53a5;
-  border: 3px solid #ff002b;
-  width: 90%;
-  max-width: 650px;
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  position: relative;
-  color: #ff002b;
-}
-
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: #ff002b;
-  cursor: pointer;
-}
-
-.section-content {
-  display: none;
-}
-
-.section-content.active {
-  display: block;
-}
-
-.section-content h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-.subfolder-tabs {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.tab-btn {
-  background: transparent;
-  border: 2px solid #ff002b;
-  color: #ff002b;
-  padding: 0.5rem 1rem;
-  font-weight: 900;
-  border-radius: 30px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.tab-btn.active, .tab-btn:hover {
-  background-color: #ff002b;
-  color: #ff53a5;
-}
-
-.grid-placeholder {
-  font-size: 1.2rem;
-  font-weight: 700;
 }
 
 /* MOBILE RESPONSIVE */
