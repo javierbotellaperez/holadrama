@@ -1,38 +1,26 @@
 const greetings = [
-  "Hola",
-  "Hello",
-  "Bonjour",
-  "Ciao",
-  "Olá",
-  "Hallo",
-  "Konnichiwa",
-  "Ni Hao",
-  "Cześć",
-  "Namaste"
+  { text: "Hola", class: "font-es" },
+  { text: "Bonjour", class: "font-fr" },
+  { text: "Ciao", class: "font-it" },
+  { text: "こんにちは", class: "font-jp" }, // Japonés
+  { text: "你好", class: "font-cn" },       // Chino
+  { text: "Namaste", class: "font-hi" },    // Hindi / Caligrafía
+  { text: "Hello", class: "font-es" },
+  { text: "Olá", class: "font-fr" }
 ];
 
-let currentIndex = 0;
-const greetingElement = document.getElementById("greeting");
+const track = document.getElementById("ticker");
 
-function changeGreeting() {
-  // 1. Animamos la palabra saliente
-  greetingElement.classList.add("slide-out");
+function populateTicker() {
+  // Duplicamos la lista para que la animación fluida sea 100% infinita y sin saltos
+  const fullList = [...greetings, ...greetings];
 
-  setTimeout(() => {
-    // 2. Cambiamos el texto y lo posicionamos abajo de forma invisible
-    currentIndex = (currentIndex + 1) % greetings.length;
-    greetingElement.textContent = greetings[currentIndex];
-    greetingElement.classList.remove("slide-out");
-    greetingElement.classList.add("slide-in-prepare");
-
-    // 3. Animamos la entrada
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        greetingElement.classList.remove("slide-in-prepare");
-      });
-    });
-  }, 500); // Coincide con el tiempo de transición CSS (.5s)
+  fullList.forEach((item) => {
+    const span = document.createElement("span");
+    span.textContent = item.text;
+    span.classList.add("greeting-item", item.class);
+    track.appendChild(span);
+  });
 }
 
-// Cambia la palabra cada 2.5 segundos
-setInterval(changeGreeting, 2500);
+populateTicker();
