@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ff53a5; /* Rosa corporativo DRAMA */
+  font-family: 'Noto Sans', sans-serif;
+  color: #ff0000; /* Rojo DRAMA */
+}
+
+/* NAVEGACIÓN 4 ESQUINAS */
+.corner-nav {
+  position: fixed;
+  z-index: 100;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff0000;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+}
+
+.corner-nav:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.top-left { top: 2rem; left: 2.5rem; }
+.top-right { top: 2rem; right: 2.5rem; }
+.bottom-left { bottom: 2rem; left: 2.5rem; }
+.bottom-right { bottom: 2rem; right: 2.5rem; }
+
+/* CONTENEDOR DE CONTACTO */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 7rem 2rem 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* FORMULARIO */
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background-color: transparent;
+  border: 2px solid #ff0000;
+  border-radius: 4px;
+  color: #ff0000;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background-color: rgba(255, 0, 0, 0.08);
+}
+
+/* BOTÓN DE ENVÍO */
+.submit-btn {
+  background-color: #ff0000;
+  color: #ff53a5;
+  border: none;
+  padding: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* REDES SOCIALES / INSTAGRAM */
+.social-section {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #ff0000;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.instagram-link:hover {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+.ig-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.handle {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 768px) {
+  .corner-nav { font-size: 0.85rem; }
+  .top-left { top: 1rem; left: 1rem; }
+  .top-right { top: 1rem; right: 1rem; }
+  .bottom-left { bottom: 1rem; left: 1rem; }
+  .bottom-right { bottom: 1rem; right: 1rem; }
+
+  .contact-container { padding: 5rem 1.5rem 3rem 1.5rem; }
+  .contact-title { font-size: 1.6rem; }
+  .form-group input, .form-group textarea { font-size: 0.9rem; }
+  .submit-btn { font-size: 0.9rem; }
+}
