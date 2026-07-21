@@ -1,26 +1,45 @@
+// Lista de saludos
 const greetings = [
-  { text: "Hola", class: "font-es" },
-  { text: "Bonjour", class: "font-fr" },
-  { text: "Ciao", class: "font-it" },
-  { text: "こんにちは", class: "font-jp" }, // Japonés
-  { text: "你好", class: "font-cn" },       // Chino
-  { text: "Namaste", class: "font-hi" },    // Hindi / Caligrafía
-  { text: "Hello", class: "font-es" },
-  { text: "Olá", class: "font-fr" }
+  "Hola",
+  "Hello",
+  "Bonjour",
+  "Ciao",
+  "こんにちは", // Japonés
+  "你好",       // Chino
+  "Olá",
+  "Hallo"
 ];
 
 const track = document.getElementById("ticker");
 
 function populateTicker() {
-  // Duplicamos la lista para que la animación fluida sea 100% infinita y sin saltos
   const fullList = [...greetings, ...greetings];
-
-  fullList.forEach((item) => {
+  fullList.forEach((text) => {
     const span = document.createElement("span");
-    span.textContent = item.text;
-    span.classList.add("greeting-item", item.class);
+    span.textContent = text;
+    span.classList.add("greeting-item");
     track.appendChild(span);
   });
+}
+
+// Abrir secciones de las esquinas
+function openSection(sectionId) {
+  const overlay = document.getElementById("modal-overlay");
+  const sections = document.querySelectorAll(".section-content");
+  
+  sections.forEach(sec => sec.classList.remove("active"));
+  
+  const targetSection = document.getElementById(`sec-${sectionId}`);
+  if (targetSection) {
+    targetSection.classList.add("active");
+    overlay.classList.add("active");
+  }
+}
+
+// Cerrar ventanas
+function closeSection() {
+  const overlay = document.getElementById("modal-overlay");
+  overlay.classList.remove("active");
 }
 
 populateTicker();
