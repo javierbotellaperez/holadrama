@@ -3,39 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRAMA</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    /* Estilos específicos para páginas de contenido */
-    body {
-      overflow-y: auto; /* Permite scroll vertical */
-      padding: 6rem 2rem 2rem 2rem;
-      color: #ff002b;
-    }
-    .back-btn {
-      position: fixed;
-      top: 2rem;
-      left: 2.5rem;
-      color: #ff002b;
-      text-decoration: none;
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-    .section-title {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-    }
-  </style>
+  <title>DRAMA — Events</title>
+  <link rel="icon" type="image/png" href="../logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="events-style.css">
 </head>
 <body>
 
-  <!-- Botón para volver a la portada -->
-  <a href="../" class="back-btn">← Back</a>
+  <!-- NAVEGACIÓN PRINCIPAL DE 4 ESQUINAS -->
+  <a href="../music-videos/thumb/" class="corner-nav top-left">MUSIC VIDEOS</a>
+  <a href="../" class="corner-nav top-right">HOME</a>
+  <a href="../about/" class="corner-nav bottom-left">ABOUT</a>
+  <a href="../contact/" class="corner-nav bottom-right">CONTACT</a>
 
-  <h1 class="section-title">Music Videos</h1>
+  <!-- REJILLA DE EVENTOS -->
+  <main class="events-container">
+    <h1 class="events-title">EVENTS</h1>
 
-  <!-- Aquí irán vuestras galerías de vídeo/fotos -->
-  <p>Coming Soon</p>
+    <div class="events-grid">
+      
+      <!-- EVENTO 1 -->
+      <a href="sevdaliza-tour/" class="event-card">
+        <div class="thumb-wrapper">
+          <img src="images/event1_cover.jpg" alt="Portada Evento 1" class="thumb-img">
+          <div class="overlay">
+            <span class="view-icon">EXPLORE</span>
+          </div>
+        </div>
+        <div class="event-info">
+          <div class="main-details">
+            <span class="event-name">SEVDALIZA LIVE EXPERIENCE</span>
+            <span class="client">ALCÁZAR STAGE</span>
+          </div>
+          <div class="extra-detail">
+            <span class="location">MADRID</span>
+            <span class="year">2025</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- EVENTO 2 -->
+      <a href="sevdaliza-tour/" class="event-card">
+        <div class="thumb-wrapper">
+          <img src="images/event2_cover.jpg" alt="Portada Evento 2" class="thumb-img">
+          <div class="overlay">
+            <span class="view-icon">EXPLORE</span>
+          </div>
+        </div>
+        <div class="event-info">
+          <div class="main-details">
+            <span class="event-name">DRAMA NIGHT OUT</span>
+            <span class="client">RELEASE PARTY</span>
+          </div>
+          <div class="extra-detail">
+            <span class="location">BARCELONA</span>
+            <span class="year">2024</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
 
 </body>
 </html>
