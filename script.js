@@ -1,38 +1,25 @@
+// Lista de saludos
 const greetings = [
   "Hola",
   "Hello",
   "Bonjour",
   "Ciao",
+  "こんにちは", // Japonés
+  "你好",       // Chino
   "Olá",
-  "Hallo",
-  "Konnichiwa",
-  "Ni Hao",
-  "Cześć",
-  "Namaste"
+  "Hallo"
 ];
 
-let currentIndex = 0;
-const greetingElement = document.getElementById("greeting");
+const track = document.getElementById("ticker");
 
-function changeGreeting() {
-  // 1. Animamos la palabra saliente
-  greetingElement.classList.add("slide-out");
-
-  setTimeout(() => {
-    // 2. Cambiamos el texto y lo posicionamos abajo de forma invisible
-    currentIndex = (currentIndex + 1) % greetings.length;
-    greetingElement.textContent = greetings[currentIndex];
-    greetingElement.classList.remove("slide-out");
-    greetingElement.classList.add("slide-in-prepare");
-
-    // 3. Animamos la entrada
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        greetingElement.classList.remove("slide-in-prepare");
-      });
-    });
-  }, 500); // Coincide con el tiempo de transición CSS (.5s)
+function populateTicker() {
+  const fullList = [...greetings, ...greetings];
+  fullList.forEach((text) => {
+    const span = document.createElement("span");
+    span.textContent = text;
+    span.classList.add("greeting-item");
+    track.appendChild(span);
+  });
 }
 
-// Cambia la palabra cada 2.5 segundos
-setInterval(changeGreeting, 2500);
+populateTicker();

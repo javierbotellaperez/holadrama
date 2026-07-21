@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,58 +7,86 @@
 body, html {
   width: 100%;
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #ff52a2; /* Rosa corporativo extraído de la imagen */
+  font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+  font-weight: 900;
+  background-color: #ff53a5; /* Rosa corporativo DRAMA */
   overflow: hidden;
 }
 
-/* Layout principal de dos columnas */
+/* NAVEGACIÓN EN ESQUINAS */
+.corner-nav {
+  position: fixed;
+  z-index: 100;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff002b; /* Rojo del logo */
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+}
+
+.corner-nav:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.top-left { top: 2rem; left: 2.5rem; }
+.top-right { top: 2rem; right: 2.5rem; }
+.bottom-left { bottom: 2rem; left: 2.5rem; }
+.bottom-right { bottom: 2rem; right: 2.5rem; }
+
+/* LAYOUT PRINCIPAL */
 .main-container {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
 
-/* Sección Izquierda */
+/* BUCLE IZQUIERDO */
 .left-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-}
-
-.greeting-wrapper {
+  height: 100vh;
   overflow: hidden;
-  height: 80px;
+}
+
+.ticker-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
+  justify-content: center;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.ticker-track {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 3.5rem;
+  padding: 2rem 0;
+  animation: scrollVertical 18s linear infinite;
 }
 
-.greeting-text {
-  font-size: 4rem;
-  font-weight: 900;
-  color: #ff002b; /* Rojo del logo */
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.greeting-item {
+  font-size: 3.5rem;
+  color: #ff002b;
   text-transform: uppercase;
+  white-space: nowrap;
   letter-spacing: 2px;
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/* Animaciones para el efecto slide */
-.greeting-text.slide-out {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.greeting-text.slide-in-prepare {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: none;
-}
-
-/* Sección Derecha */
+/* LOGO DERECHO */
 .right-section {
   flex: 1;
   display: flex;
@@ -69,7 +96,7 @@ body, html {
 }
 
 .logo-wrapper {
-  max-width: 80%;
+  max-width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,21 +104,20 @@ body, html {
 
 .logo-img {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: 50vh;
   object-fit: contain;
 }
 
-/* Adaptación para móviles */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column-reverse;
   }
-
-  .left-section, .right-section {
-    flex: 1;
-  }
-
-  .greeting-text {
-    font-size: 2.5rem;
-  }
+  .greeting-item { font-size: 2.2rem; }
+  .logo-wrapper { max-width: 65%; }
+  .corner-nav { font-size: 0.85rem; }
+  .top-left { top: 1rem; left: 1rem; }
+  .top-right { top: 1rem; right: 1rem; }
+  .bottom-left { bottom: 1rem; left: 1rem; }
+  .bottom-right { bottom: 1rem; right: 1rem; }
 }
