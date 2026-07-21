@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,90 +7,86 @@
 body, html {
   width: 100%;
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #ff52a2; /* Rosa corporativo extraído de la imagen */
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #ff53a5; /* Rosa ajustado a la imagen */
   overflow: hidden;
 }
 
-/* Layout principal de dos columnas */
 .main-container {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
 
-/* Sección Izquierda */
+/* Lado Izquierdo: Ventana de la columna vertical */
 .left-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-}
-
-.greeting-wrapper {
+  height: 100vh;
   overflow: hidden;
-  height: 80px;
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 
-.greeting-text {
-  font-size: 4rem;
-  font-weight: 900;
+/* Envoltorio con máscara para suavizar la entrada y salida por arriba/abajo */
+.ticker-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+/* Pista que se desplaza infinitamente */
+.ticker-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  padding: 2rem 0;
+  animation: scrollVertical 18s linear infinite;
+}
+
+/* Animación de la columna (bucle fluido) */
+@keyframes scrollVertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Estilo base de los saludos */
+.greeting-item {
+  font-size: 3.5rem;
   color: #ff002b; /* Rojo del logo */
   text-transform: uppercase;
-  letter-spacing: 2px;
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  white-space: nowrap;
+  user-select: none;
 }
 
-/* Animaciones para el efecto slide */
-.greeting-text.slide-out {
-  transform: translateY(-100%);
-  opacity: 0;
-}
+/* --- CLASES DE CALIGRAFÍA POR IDIOMA / ESTILO --- */
+.font-es { font-family: 'Impact', sans-serif; letter-spacing: 2px; }
+.font-fr { font-family: 'Playfair Display', serif; font-style: italic; }
+.font-it { font-family: 'Cinzel', serif; letter-spacing: 4px; }
+.font-jp { font-family: 'Yuji Syuku', serif; }
+.font-cn { font-family: 'Noto Sans SC', sans-serif; }
+.font-hi { font-family: 'Rozha One', serif; }
+.font-ar { font-family: 'Amiri', serif; }
 
-.greeting-text.slide-in-prepare {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: none;
-}
-
-/* Sección Derecha */
-.right-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.logo-wrapper {
-  max-width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-img {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-/* Adaptación para móviles */
+/* Adaptación para pantallas pequeñas */
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column-reverse;
   }
-
-  .left-section, .right-section {
-    flex: 1;
+  .greeting-item {
+    font-size: 2.2rem;
   }
-
-  .greeting-text {
-    font-size: 2.5rem;
+  .ticker-track {
+    gap: 2rem;
   }
 }
