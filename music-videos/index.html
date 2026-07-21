@@ -3,39 +3,315 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRAMA</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    /* Estilos específicos para páginas de contenido */
-    body {
-      overflow-y: auto; /* Permite scroll vertical */
-      padding: 6rem 2rem 2rem 2rem;
-      color: #ff002b;
-    }
-    .back-btn {
-      position: fixed;
-      top: 2rem;
-      left: 2.5rem;
-      color: #ff002b;
-      text-decoration: none;
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-    .section-title {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-    }
-  </style>
+  <title>DRAMA — Music Videos</title>
+  <link rel="icon" type="image/png" href="../logo.png">
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="mv-style.css">
 </head>
 <body>
 
-  <!-- Botón para volver a la portada -->
-  <a href="../" class="back-btn">← Back</a>
+  <!-- Navegación Esquinas -->
+  <a href="../" class="corner-nav top-left">HOME</a>
 
-  <h1 class="section-title">Music Videos</h1>
+  <!-- Galería de Vídeos Fullscreen -->
+  <main class="videos-wrapper">
 
-  <!-- Aquí irán vuestras galerías de vídeo/fotos -->
-  <p>Coming Soon</p>
+    <!-- VIDEOCLIP 1 -->
+    <section class="video-container">
+      <video controls playsinline preload="metadata">
+        <source src="videos/mv_000001.mp4" type="video/mp4">
+        Tu navegador no soporta vídeos en HTML5.
+      </video>
+      
+      <button class="credits-btn" onclick="openCredits('credits-1')">CRÉDITOS</button>
 
+      <!-- Panel de Créditos 1 -->
+      <div id="credits-1" class="credits-modal">
+        <button class="close-btn" onclick="closeCredits('credits-1')">✕ CERRAR</button>
+        <div class="credits-content">
+          <div class="credit-group">
+            <span class="role">Music</span>
+            <span class="name">Performed by: Sevdaliza</span>
+            <span class="name">Produced by: Sevdaliza, Mathias Janmaat</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Director</span>
+            <span class="name">Tanu Muiño</span>
+            <span class="role">Executive Producer</span>
+            <span class="name">Sevdaliza</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Production Company</span>
+            <span class="name">Produced by DRAMA</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">DRAMA</span>
+            <span class="name">Executive Producer / Producer: Karen Saurí Marchán</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Heads of Departments – Part 1</span>
+            <span class="name">Line Producer: Laura Lepre</span>
+            <span class="name">Production Manager: Cristina Marín</span>
+            <span class="name">Director of Photography: Nikita Kuzmenko</span>
+            <span class="name">Production Designer: Helen Gadjilova</span>
+            <span class="name">Stylist: Jose Carayol</span>
+            <span class="name">Creative Director + Stylist: Margarita Shekel</span>
+            <span class="name">1st AD: Masha Khalpakhchi</span>
+            <span class="name">Editor: Aitor Bigas</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Heads of Departments – Part 2</span>
+            <span class="name">Choreographer: Mecnun Giasar</span>
+            <span class="name">Make Up Artist (Sevdaliza): Thirza King</span>
+            <span class="name">Hair Artist (Sevdaliza): Besarion Gabunia</span>
+            <span class="name">Creative Nail Artist (Sevdaliza): Oksana Zavora</span>
+            <span class="name">Creative VFX Studio: Mathematic</span>
+            <span class="name">Colorist: Tim Masick @ Company3</span>
+            <span class="name">Credits Graphic Designer: Realmente Bravo</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Sevdaliza's Team</span>
+            <span class="name">Executive Producers: Sevdaliza, Cyrus Saidi, Brandon De Oliveira, Andre Benz</span>
+            <span class="name">Management: Headfirst Music, Cyrus Talent Management</span>
+            <span class="name">Management: Lijne Kreupeling, Nigel Van Ommeren, Cyrus Saidi</span>
+            <span class="name">Legal: Audrey Benoulaid (Myman Greenspan Fox Rosenberg Mobster Younger & Light LLP)</span>
+            <span class="name">Video Commissioner: Ranya Batal</span>
+            <span class="name">Creative Consultant: Yann Webber</span>
+            <span class="name">Creative Advisors: Ilias El Khaddari, David Rubens</span>
+            <span class="name">Artist Assistant: Alexis Cavaignac</span>
+            <span class="name">Legal: Josh Hefner, Mark (MML)</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Service Production Company</span>
+            <span class="name">Radioactive Shelter</span>
+            <span class="name">Founding Partners: Darko Skulsky, Albert Zurashvili</span>
+            <span class="name">Head of Bidding: Marina Karmolit</span>
+            <span class="name">Executive Producer: Gena Shevchenko</span>
+            <span class="name">Producer: Yulia Foster</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Production Team – Service</span>
+            <span class="name">Production Coordinator: Vlas Laushkin</span>
+            <span class="name">Production Manager: Otson Miminoshvili</span>
+            <span class="name">Production Assistants: Ana Apakidze, Alex Kryshtal</span>
+            <span class="name">Office Manager: Nini Gulikashvili</span>
+            <span class="name">2nd AD: George Petriashvili</span>
+            <span class="name">Location Manager: Irakli Gvishiani</span>
+            <span class="name">Set Manager: Achi Damenia</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Camera Department</span>
+            <span class="name">1st AC: Manu Elijarashvili</span>
+            <span class="name">2nd AC: Giorgi Berdzenishvili</span>
+            <span class="name">DIT: George Matcharashvili</span>
+            <span class="name">Key Grip: Sergi Kveselava</span>
+            <span class="name">Technocrane Operator: Roma Vacheishvili</span>
+            <span class="name">Gaffers: Rost Vasyliev, Samsor Mangal</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Art Department</span>
+            <span class="name">Art Department: Slowpulse, District 9 Productions</span>
+            <span class="name">Art Directors: Mariam Iakobashvili, George Karalashvili</span>
+            <span class="name">Art Department Crew: Dato Daraselia, Sulo Sturua, Nino Daraselia, Gongadze Nika, Gaga Khachapuridze, Tatia Tabutsadze, Keti Isakadze, Temo Ratiani, Irakli Iakobashvili, Kino Fabrika</span>
+            <span class="name">SFX: Arsen Malkhasyan</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Talent</span>
+            <span class="name">Helper #1: Perry Ope</span>
+            <span class="name">Helper #2: Saba Chanukvadze</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Casting & Wardrobe</span>
+            <span class="name">Casting Managers: Sopho Gagua, Shoka Shon</span>
+            <span class="name">1st Stylist Assistant: Itziar de Berry</span>
+            <span class="name">Local Stylist: Kato Gelashvili</span>
+            <span class="name">Local Style Assistants: Tiko Imnadze, Anastasia Pkhaladze, Elene Gabilaia</span>
+            <span class="name">Stylist Assistants: Helena Contreras, Loti Pascucci, Olga Malashenko</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Make-Up & Hair</span>
+            <span class="name">Talent Make-Up Artist: Anna Gadelia</span>
+            <span class="name">MUA Assistants: Nutsa Gelashvili, Keso Jakobia</span>
+            <span class="name">Talent Hair Stylists: Viktoria Gigiashvili, Khatia Khatiashvil</span>
+            <span class="name">Nail Artist: Elene Garuchava</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Mathematic – VFX</span>
+            <span class="name">CEO & Owner: Guillaume Marien</span>
+            <span class="name">Executive Producer: Guillaume Audibet</span>
+            <span class="name">Creative Director & Supervisor: Guillaume Cottet</span>
+            <span class="name">On-Set Supervisor: Emeric Samier</span>
+            <span class="name">Line Producer: Augustin Vernier</span>
+            <span class="name">3D Artists: Antonin Guittard, Julien Missaire, Lorine Guyard, Aymeric Bages</span>
+            <span class="name">Tracking: Adrien Delecroix</span>
+            <span class="name">Compositing Artists: Emeric Samier, Samuel Roux, Julien Michel, Fred Plum</span>
+            <span class="name">IN/OUT: Selim Meddeb, Pierre de Fraguier</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Additional Credits</span>
+            <span class="name">Editor Assistant: Victor Bañeras @ Hotel Concorde</span>
+            <span class="name">Digital Retouch: Roman Onufriychuk</span>
+            <span class="name">BTS Photo: Mariam Mzesu Giunashvili</span>
+            <span class="name">BTS Video: Giorgi Seiranovi</span>
+            <span class="name">Head of Finance: Tània Gàrriz</span>
+            <span class="name">Rental House: Fury Film</span>
+            <span class="name">Travel Agency: Travelface</span>
+            <span class="name">Catering Service: Tina Osepashvili</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Wardrobe Special Thanks</span>
+            <span class="name">Elena Velez, Dsquared2</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Special Thanks</span>
+            <span class="name">Martí Torrebadella, Mañana, Carlos Font Clos, Frank Borin, Isabel Roca, Alex Fillat, Sara Rentería, Khalid Tahhar, Ferran Capo, Colectivo Creativo de Zorras y Becarias, Jaume Saurí, Amparo Marchán, Yago Hortal</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Location</span>
+            <span class="name">Tbilisi 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOCLIP 2 -->
+    <section class="video-container">
+      <video controls playsinline preload="metadata">
+        <source src="videos/mv_000002.mp4" type="video/mp4">
+        Tu navegador no soporta vídeos en HTML5.
+      </video>
+
+      <button class="credits-btn" onclick="openCredits('credits-2')">CRÉDITOS</button>
+
+      <!-- Panel de Créditos 2 -->
+      <div id="credits-2" class="credits-modal">
+        <button class="close-btn" onclick="closeCredits('credits-2')">✕ CERRAR</button>
+        <div class="credits-content">
+          <div class="credit-group">
+            <span class="role">Music</span>
+            <span class="name">Performed by: Sevdaliza, La Joaqui</span>
+            <span class="name">Produced by: Sevdaliza, Mathias Janmaat, Adam Vadel, Remed</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Video</span>
+            <span class="name">Director: Tanu Muiño</span>
+            <span class="name">Executive Producer: Sevdaliza</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Production Company: DRAMA</span>
+            <span class="name">EP / Producer DRAMA: Karen Saurí Marchán</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Production Team</span>
+            <span class="name">Line Producer: Laura Lepre</span>
+            <span class="name">Production Manager: Cristina Marín</span>
+            <span class="name">Director of Photography: Nikita Kuzmenko</span>
+            <span class="name">Production Designer: Helen Gadjilova</span>
+            <span class="name">Creative Director & Stylist: Margarita Shekel</span>
+            <span class="name">Stylist: Jose Carayol</span>
+            <span class="name">Stylist Assistant: Itziar de Berry</span>
+            <span class="name">1st AD: Masha Khalpakhchi</span>
+            <span class="name">Editor: Carlos Font Clos</span>
+            <span class="name">Choreographer: Mecnun Giasar</span>
+            <span class="name">Sevdaliza & La Joaqui · Make Up Artist: Thirza King</span>
+            <span class="name">Sevdaliza & La Joaqui · Hair Artist: Beso Gabunia</span>
+            <span class="name">Creative VFX Studio: Mathematic</span>
+            <span class="name">Colorist: Joseph Bicknell</span>
+            <span class="name">Credits Graphic Designer: Realmente Bravo</span>
+            <span class="name">Creative Nail Artist: Oksana Zavora</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Service Production Company: Radioactive Shelter</span>
+            <span class="name">Founding Partner: Darko Skulsky</span>
+            <span class="name">Founding Partner: Albert Zurashvili</span>
+            <span class="name">Head of Bidding: Marina Karmolit</span>
+            <span class="name">EP: Gena Shevchenko</span>
+            <span class="name">Producer: Yulia Foster</span>
+            <span class="name">Production Coordinator: Vlas Laushkin</span>
+            <span class="name">Production Manager: Otson Miminoshvili</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Crew</span>
+            <span class="name">Gaffers: Rost Vasyliev & Samsor Mangal</span>
+            <span class="name">Key Grip: Sergi Kveselava</span>
+            <span class="name">1st AC: Manu Elijarashvili</span>
+            <span class="name">Art Department: Slowpulse & District 9 productions</span>
+            <span class="name">Art Directors: Mariam Iakobashvili & George Karalashvili</span>
+            <span class="name">Local stylist: Kato Gelashvili</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Dancers</span>
+            <span class="name">Cheryl Lofreda</span>
+            <span class="name">Eva N'diaye</span>
+            <span class="name">Kelly De Nigro</span>
+            <span class="name">Kendra Mart</span>
+            <span class="name">Maryna Kushchova Ashotivna</span>
+            <span class="name">Mecnun Giasar</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">Sevdaliza’s Team</span>
+            <span class="name">Artist Executive Producer: Cyrus Saidi</span>
+            <span class="name">Artist Executive Producer: Brandon De Oliveira</span>
+            <span class="name">Artist Executive Producer: Andre Benz</span>
+            <span class="name">Management: Headfirst Music</span>
+            <span class="name">Management: Cyrus Talent Management LLC</span>
+            <span class="name">Label: Create Label Group / Broke Records</span>
+            <span class="name">Legal: Audrey Benoulaid - Myman Greenspan Fox Rosenberg</span>
+            <span class="name">Video Commissioner: Ranya Batal</span>
+            <span class="name">Creative Consultant: Yann Weber</span>
+            <span class="name">Creative Advisor: Ilias El Khaddari</span>
+            <span class="name">Creative Advisor: David Rubens</span>
+            <span class="name">Artist Assistant: Alexis Cavaignac</span>
+            <span class="name">Legal: Josh Hefner. Mark MML</span>
+          </div>
+
+          <div class="credit-group">
+            <span class="role">La Joaqui Management</span>
+            <span class="name">Mel Schvartz</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function openCredits(id) {
+      document.getElementById(id).classList.add('active');
+    }
+    function closeCredits(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+  </script>
 </body>
 </html>
