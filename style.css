@@ -7,10 +7,21 @@
 body, html {
   width: 100%;
   height: 100%;
-  font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+  font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', 'Noto Sans Devanagari', sans-serif;
   font-weight: 900;
   background-color: #ff53a5; /* Rosa corporativo DRAMA */
   overflow: hidden;
+}
+
+/* Ocultar elementos sobrantes que pueda inyectar Google Translate */
+.goog-te-banner-frame, 
+.skiptranslate,
+#goog-gt-tt {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
 }
 
 /* NAVEGACIÓN EN ESQUINAS (Rojo exacto del logo) */
@@ -47,9 +58,9 @@ body, html {
   padding: 0 3rem;
 }
 
-/* BUCLE IZQUIERDO (MÁS PEQUEÑO Y SECUNDARIO) */
+/* BUCLE IZQUIERDO (CON INTERACCIÓN DE TRADUCCIÓN) */
 .left-section {
-  flex: 0.8; /* Ocupa menos espacio para dar protagonismo al logo */
+  flex: 0.8;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,7 +71,7 @@ body, html {
 .ticker-wrapper {
   height: 100vh;
   width: 100%;
-  max-width: 320px; /* Ancho ajustado para texto más pequeño */
+  max-width: 320px;
   overflow-y: auto;
   display: flex;
   justify-content: flex-end;
@@ -80,7 +91,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1.8rem; /* Espaciado más reducido */
+  gap: 1.8rem;
   padding: 4rem 0;
   animation: scrollVertical 25s linear infinite;
   width: 100%;
@@ -96,26 +107,34 @@ body, html {
 }
 
 .greeting-item {
-  font-size: 2rem; /* Idiomas considerablemente más pequeños */
+  font-size: 2rem;
   color: #ff0000;
   text-transform: lowercase;
   white-space: nowrap;
   letter-spacing: 0.5px;
   text-align: right;
-  opacity: 0.9; /* Ligera suavidad para resaltar aún más el logo */
+  opacity: 0.9;
+  cursor: pointer; /* Feedback de que se puede clicar */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
 }
 
-/* LOGO DERECHO (PROTAGONISTA Y MÁS CENTRADO) */
+.greeting-item:hover {
+  opacity: 1;
+  transform: scale(1.08); /* Pequeño hover al pasar el ratón */
+}
+
+/* LOGO DERECHO (PROTAGONISTA) */
 .right-section {
-  flex: 1.4; /* Mayor peso visual en la pantalla */
+  flex: 1.4;
   display: flex;
-  justify-content: flex-start; /* Muy cerca de los idiomas */
+  justify-content: flex-start;
   align-items: center;
-  padding-left: 1rem; /* Mínima distancia para que queden casi unidos */
+  padding-left: 1rem;
 }
 
 .logo-wrapper {
-  max-width: 90%; /* Logo más grande y potente */
+  max-width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
