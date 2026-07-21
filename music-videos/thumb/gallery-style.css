@@ -12,7 +12,7 @@ body, html {
   color: #ff0000;
 }
 
-/* NAVEGACIÓN ESQUINAS */
+/* NAVEGACIÓN 4 ESQUINAS */
 .corner-nav {
   position: fixed;
   z-index: 100;
@@ -33,6 +33,8 @@ body, html {
 
 .top-left { top: 2rem; left: 2.5rem; }
 .top-right { top: 2rem; right: 2.5rem; }
+.bottom-left { bottom: 2rem; left: 2.5rem; }
+.bottom-right { bottom: 2rem; right: 2.5rem; }
 
 /* CONTENEDOR PRINCIPAL */
 .gallery-container {
@@ -81,15 +83,14 @@ body, html {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.thumb-wrapper video,
-.thumb-wrapper img {
+.thumb-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* EFECTO HOVER OVERLAY CON PLAY */
+/* EFECTO HOVER OVERLAY */
 .overlay {
   position: absolute;
   top: 0;
@@ -104,47 +105,73 @@ body, html {
   transition: opacity 0.3s ease;
 }
 
+/* ICONO PLAY CON EL ROSA DRAMA */
 .play-icon {
-  font-size: 2.5rem;
-  color: #ff0000;
-  background: rgba(255, 255, 255, 0.9);
+  font-size: 2.2rem;
+  color: #ffffff;
+  background: #ff53a5; /* Fondo Rosa DRAMA */
   width: 60px;
   height: 60px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 5px; /* Centra visualmente el triángulo del play */
+  padding-left: 4px;
+  box-shadow: 0 4px 15px rgba(255, 83, 165, 0.4);
 }
 
 .thumb-card:hover .overlay {
   opacity: 1;
 }
 
-/* INFO DE LAS MINIATURAS */
+/* INFORMACIÓN DE CADA VÍDEO */
 .thumb-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 0.3rem;
+}
+
+.main-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.song-title {
+  font-size: 1.1rem;
   font-weight: 900;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .artist {
-  font-size: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
+  opacity: 0.85;
 }
 
-.title {
+.director-detail {
+  display: flex;
+  gap: 0.3rem;
   font-size: 0.85rem;
-  opacity: 0.8;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.director-label {
+  opacity: 0.7;
 }
 
 /* RESPONSIVE MÓVIL */
 @media (max-width: 768px) {
-  .corner-nav { top: 1rem; }
-  .top-left { left: 1rem; }
-  .top-right { right: 1rem; }
+  .corner-nav { font-size: 0.85rem; }
+  .top-left { top: 1rem; left: 1rem; }
+  .top-right { top: 1rem; right: 1rem; }
+  .bottom-left { bottom: 1rem; left: 1rem; }
+  .bottom-right { bottom: 1rem; right: 1rem; }
   .gallery-container { padding: 5rem 1.5rem 2rem 1.5rem; }
   .gallery-title { font-size: 1.8rem; margin-bottom: 2rem; }
   .gallery-grid {
