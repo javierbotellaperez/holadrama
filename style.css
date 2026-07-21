@@ -13,14 +13,14 @@ body, html {
   overflow: hidden;
 }
 
-/* NAVEGACIÓN EN ESQUINAS */
+/* NAVEGACIÓN EN ESQUINAS (Rojo exacto del logo) */
 .corner-nav {
   position: fixed;
   z-index: 100;
   font-size: 1rem;
   font-weight: 900;
   text-transform: uppercase;
-  color: #ff002b; /* Rojo del logo */
+  color: #ff0000; /* Rojo puro coincidente con logo.png */
   text-decoration: none;
   letter-spacing: 1.5px;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -80,13 +80,13 @@ body, html {
 
 .greeting-item {
   font-size: 3.5rem;
-  color: #ff002b;
+  color: #ff0000; /* Rojo puro coincidente con logo.png */
   text-transform: uppercase;
   white-space: nowrap;
   letter-spacing: 2px;
 }
 
-/* LOGO DERECHO */
+/* LOGO DERECHO (PNG con tamaño vistoso) */
 .right-section {
   flex: 1;
   display: flex;
@@ -96,15 +96,15 @@ body, html {
 }
 
 .logo-wrapper {
-  max-width: 50%;
+  max-width: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .logo-img {
-  max-width: 100%;
-  max-height: 50vh;
+  width: 100%;
+  max-height: 65vh;
   object-fit: contain;
 }
 
@@ -114,7 +114,7 @@ body, html {
     flex-direction: column-reverse;
   }
   .greeting-item { font-size: 2.2rem; }
-  .logo-wrapper { max-width: 65%; }
+  .logo-wrapper { max-width: 80%; }
   .corner-nav { font-size: 0.85rem; }
   .top-left { top: 1rem; left: 1rem; }
   .top-right { top: 1rem; right: 1rem; }
