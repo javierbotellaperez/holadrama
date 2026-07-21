@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: 'Noto Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVEGACIÓN EN ESQUINA */
+.corner-nav {
+  position: fixed;
+  top: 2rem;
+  left: 2.5rem;
+  z-index: 100;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff0000; /* Rojo puro DRAMA */
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+}
+
+.corner-nav:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* VÍDEOS FULLSCREEN */
+.videos-wrapper {
+  width: 100vw;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.video-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que llene la pantalla completa */
+}
+
+/* BOTÓN DE CRÉDITOS */
+.credits-btn {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1.5px solid #ff0000;
+  color: #ff53a5; /* Rosa del fondo DRAMA */
+  padding: 0.6rem 1.2rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+}
+
+.credits-btn:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+/* DESPLEGABLE / MODAL DE CRÉDITOS */
+.credits-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.94); /* Fondo negro absoluto */
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 4rem 2rem;
+}
+
+.credits-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  color: #ff0000; /* Rojo DRAMA */
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+.credits-content {
+  max-width: 650px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+  text-align: center;
+  /* Scrollbar personalizado sobrio */
+  scrollbar-width: thin;
+  scrollbar-color: #ff0000 transparent;
+}
+
+.credits-content::-webkit-scrollbar {
+  width: 4px;
+}
+.credits-content::-webkit-scrollbar-thumb {
+  background-color: #ff0000;
+}
+
+.credit-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* CARGO -> Rojo DRAMA */
+.role {
+  color: #ff0000;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+/* PERSONAS / NOMBRES -> Rosa Corporativo DRAMA */
+.name {
+  color: #ff53a5;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 768px) {
+  .corner-nav { top: 1rem; left: 1rem; }
+  .credits-btn { bottom: 1.5rem; right: 1.5rem; font-size: 0.8rem; }
+  .close-btn { top: 1rem; right: 1rem; }
+  .role { font-size: 0.95rem; }
+  .name { font-size: 0.85rem; }
+}
