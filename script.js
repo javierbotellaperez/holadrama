@@ -22,24 +22,4 @@ function populateTicker() {
   });
 }
 
-// Abrir secciones de las esquinas
-function openSection(sectionId) {
-  const overlay = document.getElementById("modal-overlay");
-  const sections = document.querySelectorAll(".section-content");
-  
-  sections.forEach(sec => sec.classList.remove("active"));
-  
-  const targetSection = document.getElementById(`sec-${sectionId}`);
-  if (targetSection) {
-    targetSection.classList.add("active");
-    overlay.classList.add("active");
-  }
-}
-
-// Cerrar ventanas
-function closeSection() {
-  const overlay = document.getElementById("modal-overlay");
-  overlay.classList.remove("active");
-}
-
 populateTicker();
