@@ -105,10 +105,10 @@ body, html {
   transition: opacity 0.3s ease;
 }
 
-/* ICONO PLAY CON EL ROSA DRAMA */
+/* ICONO PLAY CON FONDO ROSA Y TRIÁNGULO ROJO */
 .play-icon {
   font-size: 2.2rem;
-  color: #ffffff;
+  color: #ff0000; /* Triángulo en Rojo DRAMA */
   background: #ff53a5; /* Fondo Rosa DRAMA */
   width: 60px;
   height: 60px;
