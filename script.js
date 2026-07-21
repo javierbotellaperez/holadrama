@@ -19,7 +19,7 @@ const greetings = [
   "أهلاً",         // Árabe (Alfabeto árabe)
   "안녕하세요",     // Coreano (Hangul)
   "สวัสดี",        // Tailandés (Alfabeto tailandés)
-  "привет"        // Ruso (Cirílico)
+  "привіт"        // Ucraniano (Cirílico)
 ];
 
 const track = document.getElementById("ticker");
