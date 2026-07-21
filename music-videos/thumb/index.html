@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRAMA — Music Videos Gallery</title>
+  <link rel="icon" type="image/png" href="../../logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="gallery-style.css">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN ESQUINAS -->
+  <a href="../../" class="corner-nav top-left">HOME</a>
+  <a href="../" class="corner-nav top-right">FULLSCREEN</a>
+
+  <!-- REJILLA DE MINIATURAS (GALLERY) -->
+  <main class="gallery-container">
+    <h1 class="gallery-title">MUSIC VIDEOS</h1>
+
+    <div class="gallery-grid">
+      
+      <!-- ITEM 1 -->
+      <a href="../#mv1" class="thumb-card">
+        <div class="thumb-wrapper">
+          <!-- Si tienes imagen fija de portada ponla en src, o deja el video que genera la miniatura automática -->
+          <video preload="metadata" muted onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+            <source src="../videos/mv_000001.mp4#t=0.5" type="video/mp4">
+          </video>
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+        </div>
+        <div class="thumb-info">
+          <span class="artist">SEVDALIZA</span>
+          <span class="title">mv_000001</span>
+        </div>
+      </a>
+
+      <!-- ITEM 2 -->
+      <a href="../#mv2" class="thumb-card">
+        <div class="thumb-wrapper">
+          <video preload="metadata" muted onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+            <source src="../videos/mv_000002.mp4#t=0.5" type="video/mp4">
+          </video>
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+        </div>
+        <div class="thumb-info">
+          <span class="artist">SEVDALIZA x LA JOAQUI</span>
+          <span class="title">mv_000002</span>
+        </div>
+      </a>
+
+      <!-- Si en el futuro añades más vídeos, solo duplicas este bloque <a class="thumb-card"> -->
+
+    </div>
+  </main>
+
+</body>
+</html>
