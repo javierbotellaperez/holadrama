@@ -24,7 +24,11 @@ const greetings = [
 
 const track = document.getElementById("ticker");
 
-// Función para forzar el cambio de idioma en Google Translate
+// Aplicar la clase 'notranslate' al contenedor para congelar los nombres de los idiomas
+if (track) {
+  track.classList.add("notranslate");
+}
+
 function translatePage(langCode) {
   const select = document.querySelector(".goog-te-combo");
   if (select) {
@@ -34,14 +38,14 @@ function translatePage(langCode) {
 }
 
 function populateTicker() {
+  if (!track) return;
   const fullList = [...greetings, ...greetings];
   
   fullList.forEach((item) => {
     const span = document.createElement("span");
     span.textContent = item.text;
-    span.classList.add("greeting-item");
+    span.classList.add("greeting-item", "notranslate"); // 'notranslate' evita que Google lo modifique
     
-    // Al hacer clic, traduce la página automáticamente
     span.addEventListener("click", () => {
       translatePage(item.lang);
     });
