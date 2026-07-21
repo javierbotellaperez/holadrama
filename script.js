@@ -39,12 +39,14 @@ function translatePage(langCode) {
 
 function populateTicker() {
   if (!track) return;
-  const fullList = [...greetings, ...greetings];
   
-  fullList.forEach((item) => {
+  // Duplicamos la lista varias veces para asegurar un flujo continuo e infinito
+  const loopList = [...greetings, ...greetings, ...greetings, ...greetings];
+  
+  loopList.forEach((item) => {
     const span = document.createElement("span");
     span.textContent = item.text;
-    span.classList.add("greeting-item", "notranslate"); // 'notranslate' evita que Google lo modifique
+    span.classList.add("greeting-item", "notranslate");
     
     span.addEventListener("click", () => {
       translatePage(item.lang);
