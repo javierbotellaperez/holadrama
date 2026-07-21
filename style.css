@@ -43,12 +43,13 @@ body, html {
   width: 100vw;
   height: 100vh;
   justify-content: center;
-  padding: 0 4rem;
+  align-items: center;
+  padding: 0 3rem;
 }
 
-/* BUCLE IZQUIERDO CON ALINEACIÓN A LA DERECHA Y SCROLL */
+/* BUCLE IZQUIERDO (MÁS PEQUEÑO Y SECUNDARIO) */
 .left-section {
-  flex: 1;
+  flex: 0.8; /* Ocupa menos espacio para dar protagonismo al logo */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -59,33 +60,32 @@ body, html {
 .ticker-wrapper {
   height: 100vh;
   width: 100%;
-  max-width: 450px;
+  max-width: 320px; /* Ancho ajustado para texto más pequeño */
   overflow-y: auto;
   display: flex;
   justify-content: flex-end;
   
   /* Oculta la barra de scroll visual */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 
 .ticker-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .ticker-track {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Justifica las palabras a la derecha */
-  gap: 2.5rem;
+  align-items: flex-end;
+  gap: 1.8rem; /* Espaciado más reducido */
   padding: 4rem 0;
   animation: scrollVertical 25s linear infinite;
   width: 100%;
 }
 
-/* Pausa la animación si el usuario pasa el ratón por encima para hacer scroll */
 .ticker-wrapper:hover .ticker-track {
   animation-play-state: paused;
 }
@@ -96,25 +96,26 @@ body, html {
 }
 
 .greeting-item {
-  font-size: 3.2rem;
+  font-size: 2rem; /* Idiomas considerablemente más pequeños */
   color: #ff0000;
   text-transform: lowercase;
   white-space: nowrap;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-align: right;
+  opacity: 0.9; /* Ligera suavidad para resaltar aún más el logo */
 }
 
-/* LOGO DERECHO */
+/* LOGO DERECHO (PROTAGONISTA Y MÁS CENTRADO) */
 .right-section {
-  flex: 1;
+  flex: 1.4; /* Mayor peso visual en la pantalla */
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Muy cerca de los idiomas */
   align-items: center;
-  padding-left: 2rem;
+  padding-left: 1rem; /* Mínima distancia para que queden casi unidos */
 }
 
 .logo-wrapper {
-  max-width: 80%;
+  max-width: 90%; /* Logo más grande y potente */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +123,7 @@ body, html {
 
 .logo-img {
   width: 100%;
-  max-height: 60vh;
+  max-height: 68vh;
   object-fit: contain;
 }
 
@@ -133,17 +134,18 @@ body, html {
     padding: 0 1rem;
   }
   .left-section, .right-section {
+    flex: 1;
     justify-content: center;
     padding-left: 0;
   }
   .ticker-track {
-    align-items: center; /* En móviles se centra para mejor lectura */
+    align-items: center;
   }
   .greeting-item { 
-    font-size: 2.2rem; 
+    font-size: 1.6rem; 
     text-align: center;
   }
-  .logo-wrapper { max-width: 75%; }
+  .logo-wrapper { max-width: 85%; }
   .corner-nav { font-size: 0.85rem; }
   .top-left { top: 1rem; left: 1rem; }
   .top-right { top: 1rem; right: 1rem; }
