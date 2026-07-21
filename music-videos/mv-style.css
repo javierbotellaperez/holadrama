@@ -146,9 +146,9 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* Traslúcido para ver el vídeo al fondo */
-  backdrop-filter: blur(10px); /* Desenfoque cinemático */
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7); /* Reducida la opacidad para ver mejor el vídeo */
+  backdrop-filter: blur(8px); /* Desenfoque sutil */
+  -webkit-backdrop-filter: blur(8px);
   z-index: 50;
   display: flex;
   flex-direction: column;
