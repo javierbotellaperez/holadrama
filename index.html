@@ -5,31 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DRAMA</title>
   
-  <!-- Tipografías de Google Fonts para las caligrafías específicas -->
+  <!-- Carga de Noto Sans con soporte para múltiples alfabetos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Sans+JP:wght@700&family=Noto+Sans+SC:wght@700&family=Playfair+Display:ital,wght@1,700&family=Rozha+One&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Noto+Sans+SC:wght@900&family=Noto+Sans:wght@900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- NAVEGACIÓN EN LAS 4 ESQUINAS -->
+  <nav class="corner-nav top-left" onclick="openSection('music-videos')">Music Videos</nav>
+  <nav class="corner-nav top-right" onclick="openSection('events')">Events</nav>
+  <nav class="corner-nav bottom-left" onclick="openSection('about')">About</nav>
+  <nav class="corner-nav bottom-right" onclick="openSection('contact')">Contact</nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="main-container">
     <!-- Lado izquierdo: Columna con Bucle Infinito -->
     <section class="left-section">
       <div class="ticker-wrapper">
-        <!-- Generaremos las palabras dinámicamente con JavaScript -->
         <div id="ticker" class="ticker-track"></div>
       </div>
     </section>
 
-    <!-- Lado derecho: Logo DRAMA -->
+    <!-- Lado derecho: Logo DRAMA (Más pequeño) -->
     <section class="right-section">
       <div class="logo-wrapper">
-        <img src="logo.png" alt="DRAMA Logo" class="logo-img">
+        <img src="logo.jpg" alt="DRAMA Logo" class="logo-img">
       </div>
     </section>
   </main>
+
+  <!-- VENTANAS MODALES / SUBCARPETAS DE CADA ESQUINA -->
+  <div id="modal-overlay" class="modal-overlay" onclick="closeSection()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeSection()">✕</button>
+
+      <!-- Subcarpeta: Music Videos -->
+      <section id="sec-music-videos" class="section-content">
+        <h2>Music Videos</h2>
+        <div class="subfolder-tabs">
+          <button class="tab-btn active">Oficiales</button>
+          <button class="tab-btn">Live Sessions</button>
+          <button class="tab-btn">BTS</button>
+        </div>
+        <div class="grid-placeholder">
+          <p>Próximamente los proyectos audiovisuales.</p>
+        </div>
+      </section>
+
+      <!-- Subcarpeta: Events -->
+      <section id="sec-events" class="section-content">
+        <h2>Events</h2>
+        <div class="subfolder-tabs">
+          <button class="tab-btn active">Próximos</button>
+          <button class="tab-btn">Festivales</button>
+          <button class="tab-btn">Archivo</button>
+        </div>
+        <div class="grid-placeholder">
+          <p>Próximas fechas y eventos en directo.</p>
+        </div>
+      </section>
+
+      <!-- Subcarpeta: About -->
+      <section id="sec-about" class="section-content">
+        <h2>About</h2>
+        <div class="subfolder-tabs">
+          <button class="tab-btn active">Bio</button>
+          <button class="tab-btn">Equipo</button>
+          <button class="tab-btn">Prensa</button>
+        </div>
+        <div class="grid-placeholder">
+          <p>Información y concepto sobre DRAMA.</p>
+        </div>
+      </section>
+
+      <!-- Subcarpeta: Contact -->
+      <section id="sec-contact" class="section-content">
+        <h2>Contact</h2>
+        <div class="subfolder-tabs">
+          <button class="tab-btn active">Booking</button>
+          <button class="tab-btn">Prensa</button>
+        </div>
+        <div class="grid-placeholder">
+          <p>hola@dramaproject.com</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
