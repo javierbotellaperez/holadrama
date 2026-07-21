@@ -20,7 +20,7 @@ body, html {
   font-size: 1rem;
   font-weight: 900;
   text-transform: uppercase;
-  color: #ff0000; /* Rojo puro coincidente con logo.png */
+  color: #ff0000;
   text-decoration: none;
   letter-spacing: 1.5px;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -37,18 +37,20 @@ body, html {
 .bottom-left { bottom: 2rem; left: 2.5rem; }
 .bottom-right { bottom: 2rem; right: 2.5rem; }
 
-/* LAYOUT PRINCIPAL */
+/* LAYOUT PRINCIPAL (Ajustado para acercar las columnas) */
 .main-container {
   display: flex;
   width: 100vw;
   height: 100vh;
+  justify-content: center; /* Centra el bloque general */
+  padding: 0 4rem; /* Margen de seguridad para las esquinas */
 }
 
-/* BUCLE IZQUIERDO */
+/* BUCLE IZQUIERDO CON SCROLL */
 .left-section {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Lo acerca hacia el centro/logo */
   align-items: center;
   height: 100vh;
   overflow: hidden;
@@ -57,20 +59,33 @@ body, html {
 .ticker-wrapper {
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  max-width: 450px; /* Acota el ancho para dar paso al logo */
+  overflow-y: auto; /* Permite scroll manual */
   display: flex;
   justify-content: center;
+  /* Oculta la barra de scroll visual manteniendo la función */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
   mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.ticker-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .ticker-track {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.5rem;
-  padding: 2rem 0;
-  animation: scrollVertical 18s linear infinite;
+  gap: 2.5rem; /* Espaciado entre saludos */
+  padding: 4rem 0;
+  animation: scrollVertical 25s linear infinite;
+}
+
+/* Pausa la animación si el usuario pasa el ratón por encima para hacer scroll cómodamente */
+.ticker-wrapper:hover .ticker-track {
+  animation-play-state: paused;
 }
 
 @keyframes scrollVertical {
@@ -79,24 +94,24 @@ body, html {
 }
 
 .greeting-item {
-  font-size: 3.5rem;
-  color: #ff0000; /* Rojo puro coincidente con logo.png */
-  text-transform: uppercase;
+  font-size: 3.2rem;
+  color: #ff0000;
+  text-transform: lowercase; /* Minúsculas forzadas por CSS */
   white-space: nowrap;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
-/* LOGO DERECHO (PNG con tamaño vistoso) */
+/* LOGO DERECHO */
 .right-section {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Lo acerca hacia el centro/texto */
   align-items: center;
-  padding: 2rem;
+  padding-left: 2rem; /* Distancia muy reducida con la columna izquierda */
 }
 
 .logo-wrapper {
-  max-width: 75%;
+  max-width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,7 +119,7 @@ body, html {
 
 .logo-img {
   width: 100%;
-  max-height: 65vh;
+  max-height: 60vh;
   object-fit: contain;
 }
 
@@ -112,9 +127,14 @@ body, html {
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column-reverse;
+    padding: 0 1rem;
+  }
+  .left-section, .right-section {
+    justify-content: center;
+    padding-left: 0;
   }
   .greeting-item { font-size: 2.2rem; }
-  .logo-wrapper { max-width: 80%; }
+  .logo-wrapper { max-width: 75%; }
   .corner-nav { font-size: 0.85rem; }
   .top-left { top: 1rem; left: 1rem; }
   .top-right { top: 1rem; right: 1rem; }
