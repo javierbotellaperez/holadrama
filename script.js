@@ -1,45 +1,53 @@
-// Lista de saludos
+// Lista de saludos con sus códigos de idioma para Google Translate
 const greetings = [
-  "Hola",
-  "Hello",
-  "Bonjour",
-  "Ciao",
-  "こんにちは", // Japonés
-  "你好",       // Chino
-  "Olá",
-  "Hallo"
+  { text: "hola", lang: "es" },
+  { text: "hello", lang: "en" },
+  { text: "fáilte", lang: "ga" },
+  { text: "bonjour", lang: "fr" },
+  { text: "ciao", lang: "it" },
+  { text: "こんにちは", lang: "ja" },
+  { text: "你好", lang: "zh-CN" },
+  { text: "olá", lang: "pt" },
+  { text: "hallo", lang: "de" },
+  { text: "नमस्ते", lang: "hi" },
+  { text: "γεια σας", lang: "el" },
+  { text: "merhaba", lang: "tr" },
+  { text: "salut", lang: "ro" },
+  { text: "hej", lang: "sv" },
+  { text: "cześć", lang: "pl" },
+  { text: "szia", lang: "hu" },
+  { text: "أهلاً", lang: "ar" },
+  { text: "안녕하세요", lang: "ko" },
+  { text: "สวัสดี", lang: "th" },
+  { text: "привіт", lang: "uk" }
 ];
 
 const track = document.getElementById("ticker");
 
-function populateTicker() {
-  const fullList = [...greetings, ...greetings];
-  fullList.forEach((text) => {
-    const span = document.createElement("span");
-    span.textContent = text;
-    span.classList.add("greeting-item");
-    track.appendChild(span);
-  });
-}
-
-// Abrir secciones de las esquinas
-function openSection(sectionId) {
-  const overlay = document.getElementById("modal-overlay");
-  const sections = document.querySelectorAll(".section-content");
-  
-  sections.forEach(sec => sec.classList.remove("active"));
-  
-  const targetSection = document.getElementById(`sec-${sectionId}`);
-  if (targetSection) {
-    targetSection.classList.add("active");
-    overlay.classList.add("active");
+// Función para forzar el cambio de idioma en Google Translate
+function translatePage(langCode) {
+  const select = document.querySelector(".goog-te-combo");
+  if (select) {
+    select.value = langCode;
+    select.dispatchEvent(new Event("change"));
   }
 }
 
-// Cerrar ventanas
-function closeSection() {
-  const overlay = document.getElementById("modal-overlay");
-  overlay.classList.remove("active");
+function populateTicker() {
+  const fullList = [...greetings, ...greetings];
+  
+  fullList.forEach((item) => {
+    const span = document.createElement("span");
+    span.textContent = item.text;
+    span.classList.add("greeting-item");
+    
+    // Al hacer clic, traduce la página automáticamente
+    span.addEventListener("click", () => {
+      translatePage(item.lang);
+    });
+
+    track.appendChild(span);
+  });
 }
 
 populateTicker();

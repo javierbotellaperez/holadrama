@@ -11,14 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Noto+Sans+SC:wght@900&family=Noto+Sans:wght@900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+
+  <!-- Colócalo dentro de la etiqueta <head> -->
+<link rel="icon" type="image/png" href="logo.jpg">
+  
 </head>
 <body>
 
-  <!-- NAVEGACIÓN EN LAS 4 ESQUINAS -->
-  <nav class="corner-nav top-left" onclick="openSection('music-videos')">Music Videos</nav>
-  <nav class="corner-nav top-right" onclick="openSection('events')">Events</nav>
-  <nav class="corner-nav bottom-left" onclick="openSection('about')">About</nav>
-  <nav class="corner-nav bottom-right" onclick="openSection('contact')">Contact</nav>
+  <!-- NAVEGACIÓN EN LAS 4 ESQUINAS (Enlaces directos a subcarpetas) -->
+  <a href="./music-videos/" class="corner-nav top-left">Music Videos</a>
+  <a href="./events/" class="corner-nav top-right">Events</a>
+  <a href="./about/" class="corner-nav bottom-left">About</a>
+  <a href="./contact/" class="corner-nav bottom-right">Contact</a>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="main-container">
@@ -37,64 +41,21 @@
     </section>
   </main>
 
-  <!-- VENTANAS MODALES / SUBCARPETAS DE CADA ESQUINA -->
-  <div id="modal-overlay" class="modal-overlay" onclick="closeSection()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="close-btn" onclick="closeSection()">✕</button>
+  <script src="script.js"></script>
 
-      <!-- Subcarpeta: Music Videos -->
-      <section id="sec-music-videos" class="section-content">
-        <h2>Music Videos</h2>
-        <div class="subfolder-tabs">
-          <button class="tab-btn active">Oficiales</button>
-          <button class="tab-btn">Live Sessions</button>
-          <button class="tab-btn">BTS</button>
-        </div>
-        <div class="grid-placeholder">
-          <p>Próximamente los proyectos audiovisuales.</p>
-        </div>
-      </section>
+<!-- Contenedor oculto para el motor de traducción -->
+  <div id="google_translate_element" style="display:none;"></div>
 
-      <!-- Subcarpeta: Events -->
-      <section id="sec-events" class="section-content">
-        <h2>Events</h2>
-        <div class="subfolder-tabs">
-          <button class="tab-btn active">Próximos</button>
-          <button class="tab-btn">Festivales</button>
-          <button class="tab-btn">Archivo</button>
-        </div>
-        <div class="grid-placeholder">
-          <p>Próximas fechas y eventos en directo.</p>
-        </div>
-      </section>
-
-      <!-- Subcarpeta: About -->
-      <section id="sec-about" class="section-content">
-        <h2>About</h2>
-        <div class="subfolder-tabs">
-          <button class="tab-btn active">Bio</button>
-          <button class="tab-btn">Equipo</button>
-          <button class="tab-btn">Prensa</button>
-        </div>
-        <div class="grid-placeholder">
-          <p>Información y concepto sobre DRAMA.</p>
-        </div>
-      </section>
-
-      <!-- Subcarpeta: Contact -->
-      <section id="sec-contact" class="section-content">
-        <h2>Contact</h2>
-        <div class="subfolder-tabs">
-          <button class="tab-btn active">Booking</button>
-          <button class="tab-btn">Prensa</button>
-        </div>
-        <div class="grid-placeholder">
-          <p>hola@dramaproject.com</p>
-        </div>
-      </section>
-
-    </div>
-  </div>
+  <!-- Script oficial de Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script src="script.js"></script>
 </body>
